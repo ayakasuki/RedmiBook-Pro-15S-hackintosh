@@ -35,11 +35,22 @@ NootedRed（原版） |
 ![chrome开启OpenGl](images/chrome开启OpenGl.png)
 
 
+## 使用RyzenAdj 解锁功耗墙
+
+驱动 | 
+:---------| 
+DirectHW | 
+
+1. boot-args 添加 `debug=0x144`参数
+2. 使用`resource`目录的脚本和二进制文件（ryzenadj）
+3. 关闭SIP
+4. 使用mac os 自带的`自动操作`应用来设置开机自启（改改脚本的路径就行）
+   
+> `password.txt`文件是用来存放root密码，再设置功耗墙时请查阅CPU TDP
+> 相对于使用`AMDRyzenCPUPowerManagement`性能提升显著
 
 ## 虚拟化问题
-目前仅只有Monterey（mac os 12.x）以下版本支持VirtualBox。我只是用来安装Debian然后在里面安装docker完成项目的编译打包工作（内存只需要分配300MB），当然如果你有更复杂的操作可以考虑买一块RK3399开发版来满足你的需求，这两者目前我都有使用。
-
-> 如果你不考虑虚拟化可以使用最新版本系统，目前`12.x`是解决虚拟化问题的最后一个版本
+目前仅只有Ventura（mac os 13.x）运行VirtualBox需要sudo。我只是用来安装Debian然后在里面安装docker完成项目的编译打包工作（内存只需要分配300MB），当然如果你有更复杂的操作可以考虑买一块RK3399开发版来满足你的需求，这两者目前我都有使用。
 
 ## ~~睡眠问题~~
 ~~通过ACPI补丁可以开启S3睡眠，但是会有些问题（第二个C口外界设备会导致秒醒）睡眠日志如下~~
