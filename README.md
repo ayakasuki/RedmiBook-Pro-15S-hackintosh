@@ -1,3 +1,8 @@
+## 桃子自用版
+- 修复原版 AX200 蓝牙不生效问题，使用的是修改好的蓝牙版本。虽然隔空投送依然是失灵
+- 本人使用原版有概率启动黑屏，但修复此版无事，不知道哪里不兼容
+- 使用 XHC 补丁取代 USBTOOL.kext，解决开机前使用无线鼠标 usb 锁死卡白果
+--------
 # macOS on RedmiBook Pro 15S
 ## 配置
 
@@ -35,19 +40,9 @@ NootedRed（原版） |
 ![chrome开启OpenGl](images/chrome开启OpenGl.png)
 
 
-## 使用RyzenAdj 解锁功耗墙
+## 继续使用AMDRyzenCPUPowerManagement
 
-驱动 | 
-:---------| 
-DirectHW | 
-
-1. boot-args 添加 `debug=0x144`参数
-2. 使用`resource`目录的脚本和二进制文件（ryzenadj）
-3. 关闭SIP
-4. 使用mac os 自带的`自动操作`应用来设置开机自启（改改脚本的路径就行）
-   
-> `password.txt`文件是用来存放root密码，再设置功耗墙时请查阅CPU TDP
-> 相对于使用`AMDRyzenCPUPowerManagement`性能提升显著
+> 虽然 DirectHW性能更好，但是因为要兼顾切换低功耗保持办公能耗比，还是这个兼容比较好
 
 ## 虚拟化问题
 目前仅只有Ventura（mac os 13.x）运行VirtualBox需要sudo。我只是用来安装Debian然后在里面安装docker完成项目的编译打包工作（内存只需要分配300MB），当然如果你有更复杂的操作可以考虑买一块RK3399开发版来满足你的需求，这两者目前我都有使用。
